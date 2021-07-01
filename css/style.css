@@ -52,3 +52,19 @@ body{
 .card-cursor{
     cursor: pointer;
 }
+
+.carousel{
+    background-color: #680397;
+}
+
+.carousel-item{
+    height: 300px;
+}
+
+.carousel-item img{
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    min-height: 300px;
+}
