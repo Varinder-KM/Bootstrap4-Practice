@@ -14,7 +14,7 @@
 
     <!--Biitstrap CSS-->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-old.css">
     <title>Ristorante Con Fusion</title>
 </head>
 
@@ -77,6 +77,99 @@
             </div>
         </div>
     </div>
+
+    <!--Form as a Modal-->
+    <div id="reservemodl" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="content">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <div class="modal-title">
+                        <h3>Reserve a Table</h3>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <dl class="row">
+                            <div class="col-12">
+                            <div class="row">
+                                <dt class="col-12 col-md-2">Number of Guests</dt>
+                                <dd class="col-12 col-md ml-0">
+                                    <form class="row ml-1">
+                                        <div class="col-1">
+                                            <input name="num" id="num1" type="radio" class="form-check-input">
+                                            <label for="num1" class="form-check-label">1</label>
+                                        </div>
+                                        <div class="col-1">
+                                            <input name="num" id="num2" type="radio" class="form-check-input">
+                                            <label for="num2" class="form-check-label">2</label>
+                                        </div>
+                                        <div class="col-1">
+                                            <input name="num" id="num3" type="radio" class="form-check-input">
+                                            <label for="num3" class="form-check-label">3</label>
+                                        </div>
+                                        <div class="col-1">
+                                            <input name="num" id="num4" type="radio" class="form-check-input">
+                                            <label for="num4" class="form-check-label">4</label>
+                                        </div>
+                                        <div class="col-1">
+                                            <input name="num" id="num5" type="radio" class="form-check-input">
+                                            <label for="num5" class="form-check-label">5</label>
+                                        </div>
+                                        <div class="col-1">
+                                            <input name="num" id="num6" type="radio" class="form-check-input">
+                                            <label for="num6" class="form-check-label">6</label>
+                                        </div>
+                                    </form>                                
+                                </dd>
+                                <div>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                            <div class="row">
+                            <dt class="col-12 col-sm-2">Section</dt>
+                            <dd class="col-12 col-sm">
+                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                <label class="btn btn-success active">
+                                <input type="radio" name="option" id="option1" autocomplete="off" checked>Non-Smoking
+                                </label>
+                                <label class="btn btn-danger">
+                                    <input type="radio" name="option" id="option2" autocomplete="off">Smoking
+                                </label>
+                            </div>
+                            </dd>
+                            </div>
+                            </div>
+                            
+                            <div class="col-12 mt-3">
+                            <div class="row">
+                            <dt class="col-12 col-sm-2">Date and Time</dt>
+                            <dd class = "col-12 col-sm ">
+                            <div class="form-group row">
+                                <input type="text" placeholder="Date" class="form-control col-5" name="date">
+                                <input type="text" placeholder="Time" class="form-control col-5 offset-1" name="time"> 
+                            </div>                                 
+                            </dd>
+                            </div>
+                            </div>
+
+                            
+                            <div class = "col-12 offset-sm-2">
+                            <div class="row">
+                                <button class="col-4 col-sm-2 btn btn-secondary" data-dismiss="modal" type="button">Cancel</button>
+                                <button type="submit" class="ml-2 col-4 col-sm-2 btn btn-primary" data-toggle="popover"
+                                title="Data is Reserved" data-content="All Your Mentioned Information has been Reserved"
+                                data-placement="bottom">Reserve</button> 
+                            </div>
+                            </div>
+
+                            <div>
+                        </dl>
+                    </div>                               
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Jumbotron Section-->
     <header class="jumbotron">
         <div class="container">
@@ -90,8 +183,8 @@
                 </div>
                 <div class="col-12 col-sm-1">
                 </div>
-                <a href="#frm" class="btn btn-warning col-12 col-sm align-self-center text-white"
-                 data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or Call us at <br><strong>+91 1234567899</strong>">
+                <a class="btn btn-warning col-12 col-sm align-self-center text-white"
+                 data-toggle="modal" data-target="#reservemodl">
                     Reserve Table
                 </a>
             </div>
@@ -104,6 +197,8 @@
         <div class="row row-content">
             <div class="col">
                 <div id="mycarousel" class="carousel slide" data-ride="carousel">
+
+                    <!-- Inner Carousel-->
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <img class="d-block img-fluid" src="img/uthappizza.png">
@@ -132,16 +227,23 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <button class="btn" id="casouselButton">
+                            <span class="fa fa-pause"></span>
+                    </button>
+                    
+                    <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#mycarousel" data-slide-to="1"></li>
                         <li data-target="#mycarousel" data-slide-to="2"></li>
                     </ol>
 
-                    <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+                    <!-- controls -->
+                    <a class=" left carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </a>
-                    <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+                    <a class=" right carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
                 </div>
@@ -305,9 +407,30 @@
 
        <script>
            $(document).ready(function(){
-               $('[data-toggle="tooltip"]').tooltip();
                $('[data-toggle="popover"').popover();
-           })
+               $("#mycarousel").carousel({interval : 2000 });
+               $('#casouselButton').on({
+                mouseenter : function(){
+                   $('#casouselButton').css('opacity',1);
+                 },
+                 mouseleave : function(){
+                    $('#casouselButton').css('opacity',0.5);
+                 }
+               });
+
+              $("#casouselButton").click(function(){
+                    if ($("#casouselButton").children("span").hasClass('fa-pause')) {
+                        $("#mycarousel").carousel('pause');
+                        $("#casouselButton").children("span").removeClass('fa-pause');
+                        $("#casouselButton").children("span").addClass('fa-play');
+                    }
+                    else if ($("#casouselButton").children("span").hasClass('fa-play')){
+                        $("#mycarousel").carousel('cycle');
+                        $("#casouselButton").children("span").removeClass('fa-play');
+                        $("#casouselButton").children("span").addClass('fa-pause');                    
+                    }
+                });
+           });
        </script>
 </body>
 

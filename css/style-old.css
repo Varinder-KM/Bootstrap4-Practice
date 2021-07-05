@@ -68,3 +68,12 @@ body{
 
     min-height: 300px;
 }
+
+#casouselButton{
+    background: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0.5;
+}
