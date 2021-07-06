@@ -77,3 +77,10 @@ body{
     z-index: 2;
     opacity: 0.5;
 }
+
+.modal-header{
+    background-color:#680397;
+}
+.modal-body{
+    background-color: #9575CD;
+}
